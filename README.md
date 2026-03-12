@@ -144,9 +144,8 @@ RealEstateManagementSystem
  **Installation**
 
  Clone the repository
-```
-git clone https://github.com/your-username/real-estate-management-system.git
-```
+
+[Link Text](https://github.com/bhavyasrimacharla8-ctrl/Real-Estate-property-management/)
 
  Navigate to the project folder
 
@@ -155,9 +154,9 @@ git clone https://github.com/your-username/real-estate-management-system.git
  Run the application
 
  Open the browser
-```
-http://127.0.0.1:5000
-```
+
+[link Text](http://127.0.0.1:5000/)
+
 
  **How It Works**
 
