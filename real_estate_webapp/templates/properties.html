@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Properties</h2>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+}
+
+table{
+width:80%;
+margin:auto;
+border-collapse:collapse;
+background: white;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
+}
+
+th{
+background: #333;
+color:white;
+}
+
+form{
+text-align:center;
+margin:20px;
+}
+
+button{
+padding:6px 12px;
+border:none;
+cursor:pointer;
+}
+
+.edit{
+background:orange;
+color:white;
+}
+
+
+.add{background:green;color:white;}
+.delete{background:red;color:white;}
+</style>
+
+<!-- ADD PROPERTY -->
+
+<form method="POST">
+
+<input type="text" name="name" placeholder="Property Name" required>
+
+<select name="owner_id" required>
+<option value="">Select Owner</option>
+{% for o in owners %}
+<option value="{{o.id}}">{{o.name}}</option>
+{% endfor %}
+</select>
+
+<select name="location_id" required>
+<option value="">Select Location</option>
+{% for l in locations %}
+<option value="{{l.id}}">{{l.city}}</option>
+{% endfor %}
+</select>
+
+<button class="add">Add Property</button>
+
+</form>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Owner</th>
+<th>Location</th>
+<th>Actions</th>
+</tr>
+
+{% for p in properties %}
+
+<tr>
+
+<td>{{p.id}}</td>
+<td>{{p.name}}</td>
+<td>{{p.owner_id}}</td>
+<td>{{p.location_id}}</td>
+
+<td>
+
+<a href="/edit_property/{{p.id}}">
+<button class="edit">Edit</button>
+</a>
+
+<a href="/delete_property/{{p.id}}">
+<button class="delete">Delete</button>
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

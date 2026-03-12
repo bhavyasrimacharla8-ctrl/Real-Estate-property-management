@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit Agent</h2>
+
+<form method="POST">
+
+<input type="text"
+name="name"
+value="{{agent['name']}}"
+required>
+
+<button>Update Agent</button>
+
+</form>
+
+{% endblock %}

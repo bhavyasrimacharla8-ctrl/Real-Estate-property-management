@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+    <h2>🛠 Maintenance</h2>
+    
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+}
+
+table{
+width:80%;
+margin:auto;
+border-collapse:collapse;
+background:white;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#333;
+color:white;
+}
+
+button{
+padding:6px 12px;
+cursor:pointer;
+border:none;
+}
+
+.add{
+background:green;
+color:white;
+}
+
+.edit{
+background:orange;
+color:white;
+}
+
+.delete{
+background:red;
+color:white;
+}
+
+form{
+text-align:center;
+margin:20px;
+}
+
+</style>
+
+
+    <form method="POST">
+
+        <select name="property_id" required>
+            <option value="">Select Property</option>
+            {% for p in properties %}
+            <option value="{{ p['id'] }}">{{ p['name'] }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="text" name="description" placeholder="Maintenance Description" required>
+
+        <button class="add">Add Record</button>
+    </form>
+</div>
+
+<div class="card">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Property ID</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+        {% for m in maintenance %}
+        <tr>
+            <td>{{ m["id"] }}</td>
+            <td>{{ m["property_id"] }}</td>
+            <td>{{ m["description"] }}</td>
+
+  <td>
+
+<a href="/edit_maintenance/{{m['id']}}">
+<button class="edit">Edit</button>
+</a>
+
+<a href="/delete_maintenance/{{m['id']}}" onclick="return confirm('Delete record?')">
+<button class="delete">Delete</button>
+</a>
+
+</td>
+</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Agents</h2>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+}
+
+table{
+width:80%;
+margin:auto;
+border-collapse:collapse;
+background:white;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#333;
+color:white;
+}
+
+button{
+padding:6px 12px;
+cursor:pointer;
+border:none;
+}
+
+.add{
+background:green;
+color:white;
+}
+
+.edit{
+background:orange;
+color:white;
+}
+
+.delete{
+background:red;
+color:white;
+}
+
+form{
+text-align:center;
+margin:20px;
+}
+
+</style>
+
+
+<form method="POST">
+
+<input type="text"
+name="name"
+placeholder="Agent Name"
+required>
+
+<button class="add">Add Agent</button>
+
+</form>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Actions</th>
+</tr>
+
+{% for agent in agents %}
+
+<tr>
+
+<td>{{ agent.id }}</td>
+
+<td>{{ agent.name }}</td>
+
+<td>
+
+<a href="/edit_agent/{{ agent.id }}">
+<button class ="edit">Edit</button>
+</a>
+
+<a href="/delete_agent/{{ agent.id }}"
+onclick="return confirm('Delete this agent?')">
+
+<button class="delete">Delete</button>
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

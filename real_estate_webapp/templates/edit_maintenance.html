@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit Maintenance</h2>
+
+<form method="POST">
+
+<select name="property_id" required>
+
+{% for p in properties %}
+
+<option value="{{p['id']}}"
+{% if p['id'] == record['property_id'] %}selected{% endif %}>
+{{p['name']}}
+</option>
+
+{% endfor %}
+
+</select>
+
+<input type="text"
+name="description"
+value="{{record['description']}}"
+required>
+
+<button>Update Maintenance</button>
+
+</form>
+
+{% endblock %}

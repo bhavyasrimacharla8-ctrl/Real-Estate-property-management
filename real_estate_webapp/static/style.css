@@ -1,0 +1,28 @@
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.btn-custom {
+    background-color: #00c6ff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    width: 200px;
+}
+
+.btn-custom:hover {
+    background-color: #0072ff;
+    color: white;
+    transform: scale(1.05);
+    transition: 0.3s;
+}

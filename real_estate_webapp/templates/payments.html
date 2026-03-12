@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+    <h2>💰 Payments</h2>
+
+    
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+}
+
+table{
+width:80%;
+margin:auto;
+border-collapse:collapse;
+background:white;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#333;
+color:white;
+}
+
+button{
+padding:6px 12px;
+cursor:pointer;
+border:none;
+}
+
+.add{
+background:green;
+color:white;
+}
+
+.edit{
+background:orange;
+color:white;
+}
+
+.delete{
+background:red;
+color:white;
+}
+
+form{
+text-align:center;
+margin:20px;
+}
+
+</style>
+
+
+    <form method="POST">
+
+        <select name="rental_id" required>
+            <option value="">Select Rental</option>
+            {% for r in rentals %}
+            <option value="{{ r['id'] }}">Rental {{ r['id'] }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="number" name="amount" placeholder="Payment Amount" required>
+
+        <button class="add">Add Payment</button>
+    </form>
+</div>
+
+<div class="card">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Rental ID</th>
+            <th>Amount</th>
+            <th>Actions</th>
+        </tr>
+        {% for p in payments %}
+        <tr>
+            <td>{{ p["id"] }}</td>
+            <td>{{ p["rental_id"] }}</td>
+            <td>{{ p["amount"] }}</td>
+
+            
+<td>
+
+<a href="/edit_payment/{{ p[0] }}">
+<button class="edit">Edit</button>
+</a>
+
+<a href="/delete_payment/{{ p[0] }}"
+onclick="return confirm('Delete p?')">
+<button class="delete">Delete</button>
+</a>
+
+</td>
+
+
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

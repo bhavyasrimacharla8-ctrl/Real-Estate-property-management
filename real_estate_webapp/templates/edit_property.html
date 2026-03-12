@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit Property</h2>
+
+<form method="POST">
+
+<input type="text" name="name" value="{{property.name}}" required>
+
+<br><br>
+
+<select name="owner_id" required>
+
+{% for o in owners %}
+
+<option value="{{o.id}}"
+{% if o.id == property.owner_id %}selected{% endif %}>
+{{o.name}}
+</option>
+
+{% endfor %}
+
+</select>
+
+<br><br>
+
+<select name="location_id" required>
+
+{% for l in locations %}
+
+<option value="{{l.id}}"
+{% if l.id == property.location_id %}selected{% endif %}>
+{{l.city}}
+</option>
+
+{% endfor %}
+
+</select>
+
+<br><br>
+
+<button type="submit">Update Property</button>
+
+<a href="/properties">Cancel</a>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real Estate Property Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-weight: 300;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            color: #1e3c72;
+            padding: 25px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background: #f4f7ff;
+        }
+
+        @media(max-width: 900px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🏠 Real Estate Property Management</h1>
+    <div class="subtitle">
+        Manage Owners, Properties, Tenants, Rentals & Payments Easily
+    </div>
+
+    <div class="grid">
+        <a href="/owners" class="card">👤 Owners</a>
+        <a href="/locations" class="card">📍 Locations</a>
+        <a href="/properties" class="card">🏢 Properties</a>
+        <a href="/tenants" class="card">🧑 Tenants</a>
+        <a href="/agents" class="card">🤝 Agents</a>
+        <a href="/rentals" class="card">📄 Rentals</a>
+        <a href="/payments" class="card">💰 Payments</a>
+        <a href="/maintenance" class="card">🛠 Maintenance</a>
+        <a href="/queries" class="card">📊 Run Queries</a>
+    </div>
+</div>
+
+
+</body>
+</html>

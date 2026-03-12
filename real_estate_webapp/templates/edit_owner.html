@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit Owner</h2>
+
+<form method="POST">
+
+<input type="text" name="name" value="{{ owner['name'] }}" required>
+
+<button type="submit">Update Owner</button>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Locations</h2>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+}
+
+table{
+width:80%;
+margin:auto;
+border-collapse:collapse;
+background:white;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#333;
+color:white;
+}
+
+button{
+padding:6px 12px;
+cursor:pointer;
+border:none;
+}
+
+.add{
+background:green;
+color:white;
+}
+
+.edit{
+background:orange;
+color:white;
+}
+
+.delete{
+background:red;
+color:white;
+}
+
+form{
+text-align:center;
+margin:20px;
+}
+
+</style>
+
+
+<form method="POST">
+
+<input type="text"
+name="city"
+placeholder="City Name"
+required>
+
+<button class="add">Add Location</button>
+
+</form>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>City</th>
+<th>Actions</th>
+</tr>
+
+{% for location in locations %}
+
+<tr>
+
+<td>{{location.id}}</td>
+<td>{{location.city}}</td>
+
+<td>
+
+<a href="/edit_location/{{location.id}}">
+    <button  class="edit">Edit</button>
+</a>
+
+<a href="/delete_location/{{location.id}}"
+onclick="return confirm('Delete location?')">
+<button class="delete">Delete</button>
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

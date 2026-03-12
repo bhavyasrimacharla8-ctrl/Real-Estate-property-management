@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+    <h2>📄 Rentals</h2>
+
+    
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+}
+
+table{
+width:80%;
+margin:auto;
+border-collapse:collapse;
+background:white;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#333;
+color:white;
+}
+
+button{
+padding:6px 12px;
+cursor:pointer;
+border:none;
+}
+
+.add{
+background:green;
+color:white;
+}
+
+.edit{
+background:orange;
+color:white;
+}
+
+.delete{
+background:red;
+color:white;
+}
+
+form{
+text-align:center;
+margin:20px;
+}
+
+</style>
+
+
+    <form method="POST">
+
+        <select name="property_id" required>
+            <option value="">Select Property</option>
+            {% for p in properties %}
+            <option value="{{ p['id'] }}">{{ p['name'] }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="tenant_id" required>
+            <option value="">Select Tenant</option>
+            {% for t in tenants %}
+            <option value="{{ t['id'] }}">{{ t['name'] }}</option>
+            {% endfor %}
+        </select>
+
+        <button class="add">Create Rental</button>
+    </form>
+</div>
+
+<div class="card">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Property ID</th>
+            <th>Tenant ID</th>
+            <th>Actions</th>
+
+        </tr>
+        {% for r in rentals %}
+        <tr>
+            <td>{{ r["id"] }}</td>
+            <td>{{ r["property_id"] }}</td>
+            <td>{{ r["tenant_id"] }}</td>
+
+            <td>
+                
+<a href="/edit_rental/{{ r[0] }}">
+<button class="edit">Edit</button>
+</a>
+
+<a href="/delete_rental/{{ r[0] }}"
+onclick="return confirm('Delete r?')">
+<button class="delete">Delete</button>
+</a>
+
+            </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

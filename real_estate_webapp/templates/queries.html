@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Run Queries</h2>
+
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+}
+
+table{
+width:80%;
+margin:auto;
+border-collapse:collapse;
+background:white;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#333;
+color:white;
+}
+
+button{
+padding:6px 12px;
+cursor:pointer;
+border:none;
+}
+
+.add{
+background:green;
+color:white;
+}
+
+.edit{
+background:orange;
+color:white;
+}
+
+.delete{
+background:red;
+color:white;
+}
+
+form{
+text-align:center;
+margin:20px;
+}
+
+</style>
+
+
+<div>
+
+<a href="/query1"><button>Properties with Owners</button></a>
+<a href="/query2"><button>Properties with Locations</button></a>
+<a href="/query3"><button>Rentals with Tenants</button></a>
+<a href="/query4"><button>Total Payments</button></a>
+<a href="/query5"><button>Maintenance Records</button></a>
+<a href="/query6"><button>Properties per Owner</button></a>
+<a href="/query7"><button>Properties per Location</button></a>
+
+<br><br>
+
+<a href="/query8"><button>Total Tenants</button></a>
+<a href="/query9"><button>Total Agents</button></a>
+<a href="/query10"><button>All Rentals</button></a>
+<a href="/query11"><button>Payments with Rentals</button></a>
+<a href="/query12"><button>Average Payment</button></a>
+<a href="/query13"><button>Highest Payment</button></a>
+<a href="/query14"><button>Lowest Payment</button></a>
+
+<br><br>
+
+<a href="/query15"><button>Total Properties</button></a>
+<a href="/query16"><button>Properties without Rentals</button></a>
+<a href="/query17"><button>Tenants with Properties</button></a>
+<a href="/query18"><button>Maintenance with Property</button></a>
+<a href="/query19"><button>Total Maintenance Records</button></a>
+<a href="/query20"><button>Total Rentals</button></a>
+
+</div>
+
+
+<br>
+
+{% if title %}
+<h3>{{ title }}</h3>
+{% endif %}
+
+{% if result %}
+
+<table border="1" cellpadding="10">
+
+{% for row in result %}
+
+<tr>
+
+{% for col in row %}
+<td>{{ col }}</td>
+{% endfor %}
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endif %}
+
+{% endblock %}

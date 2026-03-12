@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Owners</h2>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f2f2f2;
+}
+
+table{
+width:80%;
+margin:auto;
+border-collapse:collapse;
+background:white;
+}
+
+th,td{
+border:1px solid #ddd;
+padding:10px;
+text-align:center;
+}
+
+th{
+background:#333;
+color:white;
+}
+
+button{
+padding:6px 12px;
+cursor:pointer;
+border:none;
+}
+
+.add{
+background:green;
+color:white;
+}
+
+.edit{
+background:orange;
+color:white;
+}
+
+.delete{
+background:red;
+color:white;
+}
+
+form{
+text-align:center;
+margin:20px;
+}
+
+</style>
+
+<form method="POST">
+<input type="text" name="name" placeholder="Owner Name" required>
+<button class="add">Add Owner</button>
+</form>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Actions</th>
+</tr>
+
+{% for owner in owners %}
+
+<tr>
+
+<td>{{ owner[0] }}</td>
+<td>{{ owner[1] }}</td>
+
+<td>
+
+<a href="/edit_owner/{{ owner[0] }}">
+<button class="edit">Edit</button>
+</a>
+
+<a href="/delete_owner/{{ owner[0] }}"
+onclick="return confirm('Delete owner?')">
+<button class="delete">Delete</button>
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit Tenant</h2>
+
+<form method="POST">
+
+<input type="text"
+name="name"
+value="{{tenant['name']}}"
+required>
+
+<button>Update Tenant</button>
+
+</form>
+
+{% endblock %}
