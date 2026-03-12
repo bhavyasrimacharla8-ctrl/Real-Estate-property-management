@@ -145,7 +145,7 @@ RealEstateManagementSystem
 
  Clone the repository
 
-[Link Text](https://github.com/bhavyasrimacharla8-ctrl/Real-Estate-property-management/)
+[](https://github.com/bhavyasrimacharla8-ctrl/Real-Estate-property-management/)
 
  Navigate to the project folder
 
@@ -155,7 +155,7 @@ RealEstateManagementSystem
 
  Open the browser
 
-[link Text](http://127.0.0.1:5000/)
+[](http://127.0.0.1:5000/)
 
 
  **How It Works**
