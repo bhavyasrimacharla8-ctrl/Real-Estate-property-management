@@ -5,8 +5,7 @@ A web-based Real Estate Property Management System that helps manage property in
 This project demonstrates the practical implementation of **Database Management System (DBMS)** concepts integrated with modern web development technologies.
 
 
-
-## **Features**
+ **Features**
 
 * Manage property owners
 * Manage property locations
@@ -21,93 +20,93 @@ This project demonstrates the practical implementation of **Database Management 
 * View relationships between owners, tenants, properties, and payments
 
 
-## **Tech Stack**
+ **Tech Stack**
 
-### Frontend
+ Frontend
 
 * HTML
 * CSS
 * JavaScript
 
-### Backend
+ Backend
 
 * Python
 * Flask
 
-### Database
+Database
 
 * SQLite
 
 
-## **Database Design**
+ **Database Design**
 
 The system uses a relational database structure consisting of multiple interconnected tables.
 
-### Owners Table
+ Owners Table
 
 * id (Primary Key)
 * name
 
-### Locations Table
+ Locations Table
 
 * id (Primary Key)
 * city
 
-### Properties Table
+ Properties Table
 
 * id (Primary Key)
 * name
 * owner_id (Foreign Key)
 * location_id (Foreign Key)
 
-### Tenants Table
+ Tenants Table
 
 * id (Primary Key)
 * name
 
-### Agents Table
+ Agents Table
 
 * id (Primary Key)
 * name
 
-### Rentals Table
+ Rentals Table
 
 * id (Primary Key)
 * property_id (Foreign Key)
 * tenant_id (Foreign Key)
 
-### Payments Table
+ Payments Table
 
 * id (Primary Key)
 * rental_id (Foreign Key)
 * amount
 
-### Maintenance Table
+ Maintenance Table
 
 * id (Primary Key)
 * property_id (Foreign Key)
 * description
 
 
-## **System Architecture**
+ **System Architecture**
 
 The system follows a **three-layer architecture**:
 
-### Presentation Layer
+ Presentation Layer
 
 Frontend developed using **HTML, CSS, and JavaScript** to provide an interactive user interface.
 
-### Application Layer
+ Application Layer
 
 Backend implemented using **Python Flask**, which handles application logic, routing, and database operations.
 
-### Database Layer
+ Database Layer
 
 **SQLite** is used to store all system data including owners, tenants, properties, rentals, payments, and maintenance records.
 
 
 
-## **Project Structure**
+ **Project Structure**
 
 RealEstateManagementSystem
 
@@ -142,25 +141,25 @@ RealEstateManagementSystem
 
 
 
-## **Installation**
+ **Installation**
 
-### Clone the repository
+ Clone the repository
 ```
 git clone https://github.com/your-username/real-estate-management-system.git
 ```
 
-### Navigate to the project folder
+ Navigate to the project folder
 
-### Install dependencies
+ Install dependencies
 
-### Run the application
+ Run the application
 
-### Open the browser
+ Open the browser
 ```
 http://127.0.0.1:5000
 ```
 
-## **How It Works**
+ **How It Works**
 
 * Users open the web application through the browser.
 * The system provides different modules such as Owners, Locations, Properties, Tenants, Agents, Rentals, Payments, and Maintenance.
@@ -170,7 +169,7 @@ http://127.0.0.1:5000
 * The application demonstrates relationships between entities using foreign keys.
 
 
-## **Learning Outcomes**
+ **Learning Outcomes**
 
 This project demonstrates:
 
