@@ -4,7 +4,7 @@ A web-based Real Estate Property Management System that helps manage property in
 
 This project demonstrates the practical implementation of **Database Management System (DBMS)** concepts integrated with modern web development technologies.
 
----
+
 
 ## **Features**
 
@@ -20,7 +20,6 @@ This project demonstrates the practical implementation of **Database Management 
 * Run predefined SQL queries for data analysis
 * View relationships between owners, tenants, properties, and payments
 
----
 
 ## **Tech Stack**
 
@@ -39,7 +38,6 @@ This project demonstrates the practical implementation of **Database Management 
 
 * SQLite
 
----
 
 ## **Database Design**
 
@@ -90,7 +88,6 @@ The system uses a relational database structure consisting of multiple interconn
 * property_id (Foreign Key)
 * description
 
----
 
 ## **System Architecture**
 
@@ -108,13 +105,13 @@ Backend implemented using **Python Flask**, which handles application logic, rou
 
 **SQLite** is used to store all system data including owners, tenants, properties, rentals, payments, and maintenance records.
 
----
+
 
 ## **Project Structure**
 
 RealEstateManagementSystem
 
-```
+
 ├── app.py
 ├── database.db
 │
@@ -142,43 +139,26 @@ RealEstateManagementSystem
 │   └── style.css
 │
 └── README.md
-```
 
----
+
 
 ## **Installation**
 
 ### Clone the repository
-
 ```
 git clone https://github.com/your-username/real-estate-management-system.git
 ```
 
 ### Navigate to the project folder
 
-```
-cd real-estate-management-system
-```
-
 ### Install dependencies
-
-```
-pip install flask
-```
 
 ### Run the application
 
-```
-python app.py
-```
-
 ### Open the browser
-
 ```
 http://127.0.0.1:5000
 ```
-
----
 
 ## **How It Works**
 
@@ -189,7 +169,6 @@ http://127.0.0.1:5000
 * The **Run Queries** page allows users to execute predefined SQL queries to analyze the data.
 * The application demonstrates relationships between entities using foreign keys.
 
----
 
 ## **Learning Outcomes**
 
@@ -202,6 +181,6 @@ This project demonstrates:
 * Integration of frontend and backend technologies
 * Implementation of relational database concepts
 
----
+
 
 **This project is developed for educational purposes as part of a course project.**
